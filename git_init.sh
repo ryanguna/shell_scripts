@@ -15,7 +15,7 @@ ELEMENTS=${#arrays[@]}
 if [ -d ${RESOURCES_DIRECTORY} ] && [ -d ${VEHICLE_IMAGES_DIRECTORY} ] && [ -d ${OWNER_IMAGES_DIRECTORY} ]; then
 
 for (( i=0;i<$ELEMENTS;i++)); do
-    sudo chown -R triune:triune /var/www/html/${arrays[${i}]}
+    sudo chown -R www-data:www-data /var/www/html/${arrays[${i}]}
 done
 
 else
