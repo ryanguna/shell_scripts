@@ -19,7 +19,7 @@ for (( i=0;i<$ELEMENTS;i++)); do
 done
 
 else
-                echo "it is not present"
+        echo e- "Directories |resources|vehicle_images|owner_images are not present.. \n" >> /home/triune/error_logs.txt
 fi
 
 }
@@ -74,7 +74,7 @@ if [ -e ${SERVICE_FILE} ]; then
 
 
 else
-        echo "SERVICE FILE IS NOT FOUND CREATING FILE"
+       echo e- "Service file is not configured.. Creating a new Service File" >> /home/triune/error_logs.txt
          echo "[Unit]
               Description= TCP/IP & Websocket Server Service File
               Documentation= RyanG
@@ -104,12 +104,18 @@ EOF
                 sudo chown -R triune:triune /var/www/html
                 echo "CONFIGURING GIT... PLEASE WAIT YOU MAY ENTER YOUR PASSWORD..."
                 cd /var/www/html
+                echo "Please enter your GitLab Name"
+                read gitLabName
+                echo "Please enter your GitLab Username"
+                read gitLabUsername
+                echo "Enter your GitLab Https: Link" 
+                read httpsLink
 
-                git config --global user.name "Ryan Gunawardana"
-                git config --global user.email "ryan.g@triuneelectronics.com"
-                git clone https://ryan.g@gitlab.com/triunerd/vehiclemgt-standalone.git .
+                git config --global user.name "$gitLabName"
+                git config --global user.email "$gitLabUsername"
+                git clone ${httpsLink} .
                 changeFolderOwners
                 launchServiceFile
         else
-                echo "HTML DIRECTORY IS NOT CONFIGURED"
+                echo e- "HTML Directory is not yet configured\n" >> /home/triune/error_logs.txt
         fi
