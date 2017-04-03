@@ -56,9 +56,26 @@ echo "*******************************************************"
 read chosenValue
 
 case $chosenValue in
-        "1") Install PHP5 ;;
-        "2") Install PHP7 ;;
+        "1") Install_PHP5 ;;
+        "2") Install_PHP7 ;;
 esac
-
 }
+chooseChoices
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
