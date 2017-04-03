@@ -19,13 +19,10 @@ for (( i=0;i<$ELEMENTS;i++)); do
 done
 
 else
-      echo "it is not present"
+                echo "it is not present"
 fi
 
 }
-
-
-
 
 
 function checkVersions() {
@@ -54,7 +51,6 @@ function launchServiceFile {
 sudo apt install nodejs-legacy
 sudo su<<EOF
 SERVICE_FILE="/lib/systemd/system/socket_server.service"
-
 if [ -e ${SERVICE_FILE} ]; then
         echo "File has been created already"
         echo "[Unit]
@@ -74,7 +70,7 @@ if [ -e ${SERVICE_FILE} ]; then
              sudo systemctl daemon-reload
              echo "STARTING SOCKET SERVER"
              sudo systemctl start socket_server
-
+             sudo systemctl enable socket_server
 
 
 else
@@ -83,12 +79,11 @@ else
               Description= TCP/IP & Websocket Server Service File
               Documentation= RyanG
               After=network.target
-
               [Service]
               Type=simple
               User=triune
               ExecStart=/usr/bin/node /var/www/html/nodejs/NodeJSProject1/TCPserver.js
- 			  Restart=on-failure
+                          Restart=on-failure
 
               [Install]
               WantedBy=multi-user.target" > /lib/systemd/system/socket_server.service
@@ -96,10 +91,11 @@ else
              sudo systemctl daemon-reload
              echo "STARTING SOCKET SERVER"
              sudo systemctl start socket_server
-
+             sudo systemctl enable socket_server
 fi
 EOF
 }
+
 
         versionCheckers
         HTML_DIRECTORY="/var/www/html"
@@ -108,14 +104,12 @@ EOF
                 sudo chown -R triune:triune /var/www/html
                 echo "CONFIGURING GIT... PLEASE WAIT YOU MAY ENTER YOUR PASSWORD..."
                 cd /var/www/html
-                git init
+
                 git config --global user.name "Ryan Gunawardana"
                 git config --global user.email "ryan.g@triuneelectronics.com"
-                git remote add origin https://ryan.g@gitlab.com/triunerd/vehiclemgt-standalone.git .
-                git pull origin master
+                git clone https://ryan.g@gitlab.com/triunerd/vehiclemgt-standalone.git .
                 changeFolderOwners
                 launchServiceFile
         else
                 echo "HTML DIRECTORY IS NOT CONFIGURED"
         fi
-
