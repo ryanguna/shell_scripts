@@ -28,7 +28,7 @@ echo "Enter TCP Server Port:"
 read tcpServerPort
 
 sed -i "s/TCP_server/$tcpServerHost/g" /var/www/html/nodejs/NodeJSProject1/TCPserver.js
-sed -i "s/TCP_server_port/$tcpServerPort/g" /var/www/html/nodejs/NodeJSProject1/TCPserver.js
+sed -i "s/TCP_port/$tcpServerPort/g" /var/www/html/nodejs/NodeJSProject1/TCPserver.js
 sed -i "s/TCP_server/$tcpServerHost/g" /var/www/html/js/functions/functions.js
 
 }
@@ -38,7 +38,7 @@ function NodeJS_SocketIO_port {
 echo "Enter NodeJS Socket IO Port:"
 read nodejsSocketIOPort
 sed -i "s/socketIOPort/$nodejsSocketIOPort/g" /var/www/html/nodejs/NodeJSProject1/SocketIOServer.js
-sed -i "s/socketIOPort/$nodejsSocketIOPOrt/g" /var/www/html/js/functions/functions.js
+sed -i "s/socketIOPort/$nodejsSocketIOPort/g" /var/www/html/js/functions/functions.js
 
 }
 
@@ -63,7 +63,6 @@ case $chosenValue in
              TCP_server_host_port
              NodeJS_SocketIO_port;;
 esac
-
 }
 
 
