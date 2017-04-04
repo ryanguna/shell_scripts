@@ -100,8 +100,10 @@ EOF
         if [ -d ${HTML_DIRECTORY} ]; then
                 echo "Configuring HTML directory"
                 sudo chown -R triune:triune /var/www/html
+              
                 echo "CONFIGURING GIT... PLEASE WAIT YOU MAY ENTER YOUR PASSWORD..."
                 cd /var/www/html
+                  rm -f /var/www/html/index.html
                 echo "Please enter your GitLab Name"
                 read gitLabName
                 echo "Please enter your GitLab Username"
