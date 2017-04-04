@@ -106,7 +106,7 @@ EOF
                   rm -f /var/www/html/index.html
                 echo "Please enter your GitLab Name"
                 read gitLabName
-                echo "Please enter your GitLab Username"
+                echo "Please enter your GitLab Email"
                 read gitLabUsername
                 echo "Enter your GitLab Https: Link" 
                 read httpsLink
