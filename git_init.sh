@@ -111,7 +111,7 @@ EOF
                
                 git config --global --replace-all user.name "$gitLabName"
                 git config --global --replace-all user.email "$gitLabUsername"
-                git clone "$httpsLink".
+                git clone $httpsLink .
                 changeFolderOwners
                 launchServiceFile
         else
