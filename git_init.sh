@@ -33,7 +33,7 @@ if [ "${CHECK_VERSION}" != "" ]; then
         echo "$1 this version is installed"
 else
         echo "Installing $1..."
-        sudo apt-get install $1
+        sudo apt-get install -y $1
 fi
 }
 
@@ -48,7 +48,7 @@ checkVersions nodejs
 
 function launchServiceFile {
 
-sudo apt install nodejs-legacy
+sudo apt-get install -y nodejs-legacy
 sudo su<<EOF
 SERVICE_FILE="/lib/systemd/system/socket_server.service"
 if [ -e ${SERVICE_FILE} ]; then
