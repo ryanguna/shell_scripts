@@ -68,9 +68,8 @@ if [ -e ${SERVICE_FILE} ]; then
               WantedBy=multi-user.target" > /lib/systemd/system/socket_server.service
 
              sudo systemctl daemon-reload
-             echo "STARTING SOCKET SERVER"
-             sudo systemctl start socket_server
-             sudo systemctl enable socket_server
+             echo "Creating Socket Server"
+             
 
 
 else
@@ -89,9 +88,8 @@ else
               WantedBy=multi-user.target" > /lib/systemd/system/socket_server.service
 
              sudo systemctl daemon-reload
-             echo "STARTING SOCKET SERVER"
-             sudo systemctl start socket_server
-             sudo systemctl enable socket_server
+             echo "Creating Socket Server"
+             
 fi
 EOF
 }
