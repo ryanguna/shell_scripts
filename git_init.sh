@@ -108,9 +108,9 @@ EOF
                 read gitLabUsername
                 echo "Enter your GitLab Https: Link" 
                 read httpsLink
-
-                git config --global user.name "$gitLabName"
-                git config --global user.email "$gitLabUsername"
+               
+                git config --global --replace-all user.name "$gitLabName"
+                git config --global --replace-all user.email "$gitLabUsername"
                 git clone "$httpsLink"
                 changeFolderOwners
                 launchServiceFile
