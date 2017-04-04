@@ -65,6 +65,8 @@ case $chosenValue in
 esac
 }
 
+sudo systemctl start socket_server
+sudo systemctl enable socket_server
 
 echo "Welcome! Please choose which kind of installation you wish to proceed."
 chooseChoices
