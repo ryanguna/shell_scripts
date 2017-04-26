@@ -61,7 +61,7 @@ if [ -e ${SERVICE_FILE} ]; then
               [Service]
               Type=simple
               User=triune
-              ExecStart=/usr/bin/node /var/www/html/nodejs/NodeJSProject1/socketserver.js
+              ExecStart=/usr/bin/node /var/www/html/nodejs/NodeJSProject1/TCPserver.js
               Restart=on-failure
 
               [Install]
@@ -81,7 +81,7 @@ else
               [Service]
               Type=simple
               User=triune
-              ExecStart=/usr/bin/node /var/www/html/nodejs/NodeJSProject1/socketserver.js
+              ExecStart=/usr/bin/node /var/www/html/nodejs/NodeJSProject1/TCPserver.js
                           Restart=on-failure
 
               [Install]
