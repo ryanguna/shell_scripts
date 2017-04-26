@@ -104,16 +104,7 @@ EOF
                 echo "CONFIGURING GIT... PLEASE WAIT YOU MAY ENTER YOUR PASSWORD..."
                 cd /var/www/html
                   rm -f /var/www/html/index.html
-                echo "Please enter your GitLab Name"
-                read gitLabName
-                echo "Please enter your GitLab Email"
-                read gitLabUsername
-                echo "Enter your GitLab Https: Link" 
-                read httpsLink
-               
-                git config --global --replace-all user.name "$gitLabName"
-                git config --global --replace-all user.email "$gitLabUsername"
-                git clone $httpsLink .
+               git clone -b relove-milestone-1 https://ryan.g@gitlab.com/triunerd/vehiclemgt-standalone.git .
                 changeFolderOwners
                 launchServiceFile
         else
