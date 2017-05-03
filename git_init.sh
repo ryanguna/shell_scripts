@@ -104,7 +104,9 @@ EOF
                 echo "CONFIGURING GIT... PLEASE WAIT YOU MAY ENTER YOUR PASSWORD..."
                 cd /var/www/html
                   rm -f /var/www/html/index.html
-               git clone -b relove-milestone-1 https://ryan.g@gitlab.com/triunerd/vehiclemgt-standalone.git .
+                echo "Enter Gitlab HTTP Link: "
+                read gitlabHTTPLINK  
+                git clone -b relove-milestone-1 $gitlabHTTPLINK .
                 changeFolderOwners
                 launchServiceFile
         else
