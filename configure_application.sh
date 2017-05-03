@@ -32,6 +32,11 @@ read nodejsSocketIOPort
 sed -i "s/socketIOPort/$nodejsSocketIOPort/g" /var/www/html/nodejs/NodeJSProject1/SocketIOServer.js
 sed -i "s/socketIOPort/$nodejsSocketIOPort/g" /var/www/html/js/functions/functions.js
 sed -i "s/socketIOPort/$nodejsSocketIOPort/g" /var/www/html/load_rfid_settings.php
+
+sudo systemctl enable socket_server
+sudo systemctl daemon-reload
+sudo systemctl start socket_server
+
 }
 
 
