@@ -7,18 +7,10 @@ echo "Enter PHP MySQL Password:"
 read mysqlPassword
 sed -i "s/mysql_username/$mysqlUsername/g" /var/www/html/database_connect.php
 sed -i "s/mysql_password/$mysqlPassword/g" /var/www/html/database_connect.php
+sed -i "s/mysql_username/$mysqlUsername/g" /var/www/html/nodejs/NodeJSProject1/mysqlfile.js
+sed -i "s/mysql_password/$mysqlPassword/g" /var/www/html/nodejs/NodeJSProject1/mysqlfile.js
 }
 
-function NodeJS_database_credentials {
-
-echo "Enter NodeJS MySQL Username:"
-read nodejsDatabaseUsername
-echo "Enter NodeJS MySQL Password:"
-read nodejsDatabasePassword
-sed -i "s/mysql_username/$nodejsDatabaseUsername/g" /var/www/html/nodejs/NodeJSProject1/mysqlfile.js
-sed -i "s/mysql_password/$nodejsDatabasePassword/g" /var/www/html/nodejs/NodeJSProject1/mysqlfile.js
-
-}
 
 function TCP_server_host_port {
 
@@ -30,7 +22,7 @@ read tcpServerPort
 sed -i "s/TCP_server/$tcpServerHost/g" /var/www/html/nodejs/NodeJSProject1/TCPserver.js
 sed -i "s/TCP_port/$tcpServerPort/g" /var/www/html/nodejs/NodeJSProject1/TCPserver.js
 sed -i "s/TCP_server/$tcpServerHost/g" /var/www/html/js/functions/functions.js
-
+sed -i "s/TCP_server/$tcpServerHost/g" /var/www/html/load_rfid_settings.php
 }
 
 function NodeJS_SocketIO_port {
@@ -39,7 +31,7 @@ echo "Enter NodeJS Socket IO Port:"
 read nodejsSocketIOPort
 sed -i "s/socketIOPort/$nodejsSocketIOPort/g" /var/www/html/nodejs/NodeJSProject1/SocketIOServer.js
 sed -i "s/socketIOPort/$nodejsSocketIOPort/g" /var/www/html/js/functions/functions.js
-
+sed -i "s/socketIOPort/$nodejsSocketIOPort/g" /var/www/html/load_rfid_settings.php
 }
 
 
@@ -59,7 +51,6 @@ case $chosenValue in
         "3") TCP_server_host_port ;;
         "4") NodeJS_SocketIO_port ;;
         "5") PHP_database_credentials
-             NodeJS_database_credentials
              TCP_server_host_port
              NodeJS_SocketIO_port;;
 esac
