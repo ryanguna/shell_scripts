@@ -32,10 +32,16 @@ read nodejsSocketIOPort
 sed -i "s/socketIOPort/$nodejsSocketIOPort/g" /var/www/html/nodejs/NodeJSProject1/SocketIOServer.js
 sed -i "s/socketIOPort/$nodejsSocketIOPort/g" /var/www/html/js/functions/functions.js
 sed -i "s/socketIOPort/$nodejsSocketIOPort/g" /var/www/html/load_rfid_settings.php
+sed -i "s/socketIOPort/$nodejsSocketIOPort/g" /var/www/html/nodejs/NodeJSProject1/TCPserver.js
+
 
 sudo systemctl enable socket_server
 sudo systemctl daemon-reload
 sudo systemctl start socket_server
+sudo apt-get install php5-mysqlnd -y
+echo "Restarting Apache.... Please Wait"
+sudo /etc/init.d/apache2 restart
+
 
 }
 
