@@ -27,8 +27,8 @@ echo "INSTALLING MYSQL..."
 sudo apt-get install  mysql-server;
 echo "INSTALLING PHP7.0"
 sudo apt-get search php7.0;
-sudo apt-get install -y php-mcrypt php-gd php-mbstring;
 sudo apt-get install -y php7.0 libapache2-mod-php7.0 phpmysqli;
+sudo apt-get install -y php-mcrypt php-gd php-mbstring;
 sudo apt-get install -y php7.0-mbstring php7.0-mysql php7.0-curl php7.0-json php7.0-mcrypt php7.0-xmlrpc;
 sudo apt-get install -y php7.0[TAB];
 echo "INSTALLING COMPOSER"
