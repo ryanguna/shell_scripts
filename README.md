@@ -1,12 +1,6 @@
 # shell_scripts
 
 
-Contents of this repository are:
-
-Shell LAMP Script
-Configuration Files
-init files
-
-
+This respository contains script files for installing LAMP
 
 ty
